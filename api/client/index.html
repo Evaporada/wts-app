@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Client</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="assets/cookies.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.ac5d60bce0f405458508.css"></head>
+<script>
+  function loadFile(event) {
+    var output = document.getElementById('output');
+    console.log("e", output)
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function () {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+
+
+
+</script>
+
+<body>
+
+  <app-root></app-root>
+  <div id="cookieConsent">
+    <div id="closeCookieConsent">x</div>
+    Esta web hace uso de cookies. <a href="http://www.interior.gob.es/politica-de-cookies" target="_blank">Más información</a>. <a class="cookieConsentOK">Aceptar</a>
+</div>
+<script src="runtime.7b63b9fd40098a2e8207.js" defer></script><script src="polyfills.94daefd414b8355106ab.js" defer></script><script src="scripts.c4c155fcd63d2bd4d4c6.js" defer></script><script src="main.bb900a53e7df5b82734c.js" defer></script></body>
+<script>
+  var cookies=0;
+localStorage.cookies = localStorage.cookies;
+$(document).ready(function () {
+  if (localStorage.cookies !=1) {
+    setTimeout(function () {
+      $("#cookieConsent").fadeIn(200);
+    }, 2000);
+    $("#closeCookieConsent, .cookieConsentOK").click(function () {
+      localStorage.cookies=1;
+      cookies=1;
+      $("#cookieConsent").fadeOut(200);
+    });
+  }
+});
+
+</script>
+</html>
